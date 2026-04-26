@@ -25,6 +25,7 @@
 - ChatGPT 대화에서 나온 문제 정의와 보존할 의도는 `docs/reference/origin.md`에 별도 요약했다.
 - skill-creator quick validation, project-context runtime shape, `SKILL.md` cross-reference/미완료 표식 확인은 통과했다.
 - 실제 배포 전 README의 임시 설치 문구를 공개 설치 안내로 바꾸고, 기존 공개 리포 관례에 맞춰 support 섹션을 추가했다.
+- GitHub public repo `perhapsspy/interactive-state-flow`가 생성되었고 `main` 브랜치가 push된 상태다.
 
 ## Working Boundary
 
@@ -37,4 +38,4 @@
 
 ## Next Step
 
-- 최종 검증 후 GitHub 원격 리포를 만들고 `main` 브랜치를 push한다.
+- 공개 리포에서 README와 설치 명령을 확인하고, 이후 피드백은 별도 task로 이어간다.
