@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interactive State Flow"
+  short_description: "Structure interactive state and async flow"
+  default_prompt: "Use $interactive-state-flow to refactor this interaction so immediate state, deferred presentation, and async freshness are handled clearly."
