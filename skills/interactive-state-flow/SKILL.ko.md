@@ -37,6 +37,17 @@
 - 문제의 본질이 인터랙티브 반응성이 아니라 백엔드 처리량이다.
 - 추가 스케줄링, 백그라운드 실행, 상태 경계의 비용이 작업 자체보다 크다.
 
+## Common Agent Cases
+
+Codex 작업이 다음을 언급하면 이 스킬을 사용합니다:
+
+- 검색, typeahead, command palette, filter, date input에서 source value가 debounce되거나, 늦게 기록되거나, 오래된 결과에 덮어써진다.
+- preview, diff, file viewer, log viewer, map/canvas, chart 렌더링이 선택, 입력, 스크롤, tab 변경, mode 변경을 막는다.
+- streaming, tool output, upload, parse, fetch, realtime, SSE, socket, refresh, background 결과가 잘못된 run, route, tab, screen, session, selected item에 반영될 수 있다.
+- URL, route, focus, selection, remount, cache, fallback, quiet refresh 동작에서 화면은 current처럼 보이지만 source state, freshness, ownership은 그렇지 않다.
+
+코드에 async work, effect, worker, memoization, caching이 있다는 이유만으로 이 스킬을 사용하지 않습니다. 인터랙티브 지연, 오래된 결과, 책임 혼합, 사용자에게 보이는 freshness 위험이 있어야 합니다.
+
 ## Failure Smells
 
 - 실제 input, selection, route, intent 상태를 렌더링 비용을 줄이려고 debounce한다.

@@ -1,6 +1,6 @@
 ---
 name: interactive-state-flow
-description: Use this skill when building, refactoring, or reviewing interactive code with laggy input, stale async results, or mixed user intent, source state, derived work, scheduling, and presentation. It records user intent and source state promptly, keeps expensive work off the urgent interaction path, and freshness-gates async or presentation commits through the owning boundary.
+description: Use for interactive app code where typing, selection, navigation, search/filter, command palettes, previews, streaming/tool output, realtime updates, or file/diff/log views are laggy, stale, or race-prone because user intent/source state, derived presentation, async IO, scheduling, or background work are mixed. Keep source state prompt, move only justified expensive work off the urgent path, and commit async or presentation results through freshness-owning boundaries.
 ---
 
 # Interactive State Flow
@@ -39,6 +39,17 @@ Do not use this skill when:
 - the current implementation is small, clear, responsive, and free of expensive derived work or async ordering risk
 - the problem is mainly backend throughput rather than interactive responsiveness
 - extra scheduling, background execution, or state boundaries would cost more than the work itself
+
+## Common Agent Cases
+
+Reach for this skill when a Codex task mentions:
+
+- search, typeahead, command palette, filter, or date input where the source value is debounced, delayed, or overwritten by old results
+- preview, diff, file viewer, log viewer, map/canvas, or chart rendering that blocks selection, typing, scrolling, tab changes, or mode changes
+- streaming, tool-output, upload, parse, fetch, realtime, SSE, socket, refresh, or background results that can land in the wrong run, route, tab, screen, session, or selected item
+- URL, route, focus, selection, remount, cache, fallback, or quiet-refresh behavior where displayed state can look current while source state, freshness, or ownership says otherwise
+
+Do not use it just because code has async work, effects, workers, memoization, or caching. Require an interactive lag, stale-result, mixed-responsibility, or user-visible freshness risk.
 
 ## Failure Smells
 
