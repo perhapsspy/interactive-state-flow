@@ -34,18 +34,6 @@ Use $interactive-state-flow to refactor this search/filter UI so input state, de
 - Large lists, charts, previews, parsing, validation, or layout preparation block the interaction path.
 - A worker, isolate, background queue, or async boundary exists but result ownership and freshness are unclear.
 
-## Project Value Preservation Skills
-
-These skills help long-running projects preserve their future value.
-
-Projects do not lose value only because code grows. They lose value when flow becomes hard to read, decisions disappear, context cannot be restored, tests stop protecting real behavior, and interactive paths mix immediate state with expensive work.
-
-- [`structure-first`](https://github.com/perhapsspy/structure-first): preserves readable code flow, responsibility boundaries, modification safety, and contract-focused tests.
-- [`project-context`](https://github.com/perhapsspy/project-context): preserves project memory, decisions, current task state, and work continuity through ordinary repository documents.
-- `interactive-state-flow`: preserves interaction responsiveness and maintainability by separating promptly recorded source state from expensive presentation, async work, and execution boundaries.
-
-Each skill remains independently installable and usable. This README groups the philosophy; individual `SKILL.md` files should not call or depend on each other.
-
 ## More
 
 - Skill rules: [English](skills/interactive-state-flow/SKILL.md) | [한국어](skills/interactive-state-flow/SKILL.ko.md)

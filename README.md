@@ -34,18 +34,6 @@ $interactive-state-flow 를 사용해서 이 검색/필터 UI의 입력 상태, 
 - 큰 리스트, 차트, 프리뷰, 파싱, 검증, 레이아웃 준비가 상호작용 경로를 막을 때
 - worker, isolate, background queue 같은 실행 경계는 있지만 결과 소유권과 freshness가 불명확할 때
 
-## 프로젝트 가치 보존 스킬
-
-이 스킬들은 오래 운영되는 프로젝트가 나중에도 이해되고 수정될 수 있는 상태를 유지하도록 돕습니다.
-
-프로젝트의 가치는 코드가 늘어나서만 떨어지는 것이 아닙니다. 코드 흐름이 읽히지 않고, 결정 이유가 사라지고, 작업 맥락을 복원할 수 없고, 테스트가 실제 동작 계약을 보호하지 못하고, 인터랙티브 경로에 즉시 상태와 비싼 작업이 뒤섞일 때 가치가 떨어집니다.
-
-- [`structure-first`](https://github.com/perhapsspy/structure-first): 코드 흐름, 책임 경계, 수정 가능성, 계약 중심 테스트를 보존합니다.
-- [`project-context`](https://github.com/perhapsspy/project-context): 저장소 안의 일반 문서로 프로젝트 기억, 결정 이유, 현재 작업 상태, 작업 연속성을 보존합니다.
-- `interactive-state-flow`: 지체 없이 기록되어야 하는 기준 상태와 비용이 큰 표현·비동기 작업·실행 경로를 분리해 사용자 반응성과 유지보수성을 보존합니다.
-
-각 스킬은 독립적으로 설치하고 사용할 수 있습니다. 이 README는 같은 철학의 스킬들을 소개할 뿐, 개별 `SKILL.md`가 서로를 호출하거나 의존하게 만들지 않습니다.
-
 ## 더 보기
 
 - 스킬 상세 규칙: [English](skills/interactive-state-flow/SKILL.md) | [한국어](skills/interactive-state-flow/SKILL.ko.md)
