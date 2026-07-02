@@ -63,13 +63,14 @@ Do not use it just because code has async work, effects, workers, memoization, o
 
 ## Primary Flow
 
-1. Record user intent promptly.
-2. Commit source-of-truth state through the source owner.
-3. Classify follow-up work by urgency, cost, visibility, and freshness risk.
-4. Keep the interaction path light.
-5. Defer, cancel, batch, prioritize, virtualize, skip, cache, or move expensive work only when justified.
-6. Commit async or presentation results only through the owner when they are still fresh and useful.
-7. Test behavior contracts, not scheduler internals.
+1. Name the user-visible behavior contract: what intent/source state updates promptly, what presentation may lag, which owner accepts freshness, and what current, stale, pending, cached, or progressive state the user may see.
+2. Record user intent promptly.
+3. Commit source-of-truth state through the source owner.
+4. Classify follow-up work by urgency, cost, visibility, and freshness risk.
+5. Keep the interaction path light.
+6. Defer, cancel, batch, prioritize, virtualize, skip, cache, or move expensive work only when justified.
+7. Commit async or presentation results only through the owner when they are still fresh and useful.
+8. Test behavior contracts, not scheduler internals.
 
 ## Rules
 
@@ -146,6 +147,8 @@ If navigation, reload, unmount, or screen replacement is the freshness boundary,
 - Do not let background work directly own UI mutation.
 - Do not make small, clear, responsive code harder just to introduce scheduling boundaries.
 - Do not silently present stale output as current when the distinction matters.
+- Do not declare a user-visible stale, laggy, or race-prone interaction fixed from refactor shape alone; verify the behavior contract with the project's smallest appropriate evidence.
+- Do not use this skill as generic UI debugging, product-policy, or browser-verification ownership. If stale, cached, pending, or verification policy is undefined, surface the decision instead of choosing it inside this skill.
 
 ## Contract Tests
 
@@ -169,6 +172,7 @@ The platform names differ, but the rule is the same: protect the interaction pat
 
 Before finishing, confirm:
 
+- user-visible behavior and freshness contracts were named and verified with the smallest appropriate project evidence
 - user intent and source state are recorded promptly
 - expensive derived work is not forced onto the urgent interaction path
 - presentation lags only where safe and understandable
